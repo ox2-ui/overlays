@@ -1,0 +1,149 @@
+/* ReactCSSTransitionGroup transitions */
+
+/* Overlay fadeIn */
+.transition\:overlay-fadeIn-appear {
+  opacity: 0.01;
+}
+
+.transition\:overlay-fadeIn-appear.transition\:overlay-fadeIn-appear-active {
+  opacity: 1;
+  transition: opacity 500ms ease-in;
+}
+
+.transition\:overlay-fadeIn-leave {
+  opacity: 1;
+}
+
+.transition\:overlay-fadeIn-leave.transition\:overlay-fadeIn-leave-active {
+  opacity: 0.01;
+  transition: opacity 400ms ease-in;
+}
+
+/* Dialog fadeIn */
+.transition\:dialog-fadeIn-appear {
+  opacity: 0.01;
+}
+
+.transition\:dialog-fadeIn-appear.transition\:dialog-fadeIn-appear-active {
+  opacity: 1;
+  transition: opacity 400ms ease-in;
+}
+
+.transition\:dialog-fadeIn-leave {
+  opacity: 1;
+}
+
+.transition\:dialog-fadeIn-leave.transition\:dialog-fadeIn-leave-active {
+  opacity: 0.01;
+  transition: opacity 350ms ease-in;
+}
+
+/* Dialog zoomIn */
+
+.transition\:dialog-zoomIn-appear {
+  opacity: 0.01;
+  transform: scale3d(0.5, 0.5, 1);
+}
+
+.transition\:dialog-zoomIn-appear.transition\:dialog-zoomIn-appear-active {
+  opacity: 1;
+  transform: scale3d(1, 1, 1);
+  transition: opacity 400ms ease-in, transform 400ms cubic-bezier(0.215, 0.61, 0.355, 1); /*easeOutCubic*/
+}
+
+.transition\:dialog-zoomIn-leave {
+  opacity: 1;
+  transform: scale3d(1, 1, 1);
+}
+
+.transition\:dialog-zoomIn-leave.transition\:dialog-zoomIn-leave-active {
+  opacity: 0.01;
+  transform: scale3d(0.5, 0.5, 1);
+  transition: opacity 350ms ease-in, transform 350ms cubic-bezier(0.215, 0.61, 0.355, 1); /*easeOutCubic*/
+}
+
+/* Dialog slideFromTop */
+
+.transition\:dialog-slideFromTop-appear {
+  transform: translate(0, -100%);
+}
+
+.transition\:dialog-slideFromTop-appear.transition\:dialog-slideFromTop-appear-active {
+  transition: transform 400ms cubic-bezier(0.215, 0.61, 0.355, 1); /*easeOutCubic*/
+  transform: translate(0, 0);
+}
+
+.transition\:dialog-slideFromTop-leave {
+  transform: translate(0, 0);
+}
+
+.transition\:dialog-slideFromTop-leave.transition\:dialog-slideFromTop-leave-active {
+  transition: transform 350ms cubic-bezier(0.25, 0.46, 0.45, 0.94); /*easeOutQuad*/
+  transform: translate(0, -100%);
+}
+
+/* Dialog slideFromBottom */
+
+.transition\:dialog-slideFromBottom-appear {
+  will-change: transform;
+  transform: translate(0, 200%);
+}
+
+.transition\:dialog-slideFromBottom-appear.transition\:dialog-slideFromBottom-appear-active {
+  transition: transform 400ms cubic-bezier(0.215, 0.61, 0.355, 1); /*easeOutCubic*/
+  transform: translate(0, 0);
+}
+
+.transition\:dialog-slideFromBottom-leave {
+  will-change: transform;
+  transform: translate(0, 0);
+}
+
+.transition\:dialog-slideFromBottom-leave.transition\:dialog-slideFromBottom-leave-active {
+  transition: transform 350ms cubic-bezier(0.25, 0.46, 0.45, 0.94); /*easeOutQuad*/
+  transform: translate(0, 200%);
+}
+
+/* Dialog slideFromLeft */
+
+.transition\:dialog-slideFromLeft-appear {
+  will-change: transform;
+  transform: translate(-100%, 0);
+}
+
+.transition\:dialog-slideFromLeft-appear.transition\:dialog-slideFromLeft-appear-active {
+  transition: transform 400ms cubic-bezier(0.215, 0.61, 0.355, 1); /*easeOutCubic*/
+  transform: translate(0, 0);
+}
+
+.transition\:dialog-slideFromLeft-leave {
+  will-change: transform;
+  transform: translate(0, 0);
+}
+
+.transition\:dialog-slideFromLeft-leave.transition\:dialog-slideFromLeft-leave-active {
+  transition: transform 350ms cubic-bezier(0.25, 0.46, 0.45, 0.94); /*easeOutQuad*/
+  transform: translate(-100%, 0);
+}
+
+/* Dialog slideFromRight */
+
+.transition\:dialog-slideFromRight-appear {
+  will-change: transform;
+  transform: translate(200%, 0);
+}
+
+.transition\:dialog-slideFromRight-appear.transition\:dialog-slideFromRight-appear-active {
+  transition: transform 400ms cubic-bezier(0.215, 0.61, 0.355, 1); /*easeOutCubic*/
+  transform: translate(0, 0);
+}
+
+.transition\:dialog-slideFromRight-leave {
+  will-change: transform;
+  transform: translate(0, 0);
+}
+
+.transition\:dialog-slideFromRight-leave.transition\:dialog-slideFromRight-leave-active {
+  transition: transform 350ms cubic-bezier(0.25, 0.46, 0.45, 0.94); /*easeOutQuad*/
+  transform: translate(200%, 0);
+}

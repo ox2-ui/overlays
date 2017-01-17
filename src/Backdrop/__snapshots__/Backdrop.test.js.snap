@@ -1,0 +1,66 @@
+exports[`test renders disabled 1`] = `
+<Backdrop
+  isOpen={false}
+  zDepth={2}>
+  <ReactCSSTransitionGroup
+    transitionAppear={true}
+    transitionAppearTimeout={700}
+    transitionEnter={false}
+    transitionLeave={true}
+    transitionLeaveTimeout={400}
+    transitionName="transition:overlay-fadeIn">
+    <ReactTransitionGroup
+      childFactory={[Function]}
+      component="span"
+      transitionAppear={true}
+      transitionAppearTimeout={700}
+      transitionEnter={false}
+      transitionLeave={true}
+      transitionLeaveTimeout={400}
+      transitionName="transition:overlay-fadeIn">
+      <span />
+    </ReactTransitionGroup>
+  </ReactCSSTransitionGroup>
+</Backdrop>
+`;
+
+exports[`test renders enabled 1`] = `
+<Backdrop
+  isOpen={true}
+  zDepth={2}>
+  <ReactCSSTransitionGroup
+    transitionAppear={true}
+    transitionAppearTimeout={700}
+    transitionEnter={false}
+    transitionLeave={true}
+    transitionLeaveTimeout={400}
+    transitionName="transition:overlay-fadeIn">
+    <ReactTransitionGroup
+      childFactory={[Function]}
+      component="span"
+      transitionAppear={true}
+      transitionAppearTimeout={700}
+      transitionEnter={false}
+      transitionLeave={true}
+      transitionLeaveTimeout={400}
+      transitionName="transition:overlay-fadeIn">
+      <span>
+        <ReactCSSTransitionGroupChild
+          appear={true}
+          appearTimeout={700}
+          enter={false}
+          leave={true}
+          leaveTimeout={400}
+          name="transition:overlay-fadeIn">
+          <styled.div
+            onTouchMove={[Function]}>
+            <div
+              className="kQeSPN"
+              onTouchMove={[Function]} />
+          </styled.div>
+        </ReactCSSTransitionGroupChild>
+      </span>
+    </ReactTransitionGroup>
+  </ReactCSSTransitionGroup>
+</Backdrop>
+`;

@@ -1,0 +1,118 @@
+exports[`test renders correctly 1`] = `
+<Dialog
+  className="color:white"
+  isOpen={true}
+  transition="fadeIn"
+  type="fixed"
+  zDepth={10}>
+  <div
+    className="pos:absolute-0"
+    style={
+      Object {
+        "zIndex": 10,
+      }
+    }>
+    <ReactCSSTransitionGroup
+      className="pos:absolute-0 display:flex flex:content-center flex:items-center"
+      transitionAppear={true}
+      transitionAppearTimeout={400}
+      transitionEnter={false}
+      transitionLeave={true}
+      transitionLeaveTimeout={350}
+      transitionName="transition:dialog-fadeIn">
+      <ReactTransitionGroup
+        childFactory={[Function]}
+        className="pos:absolute-0 display:flex flex:content-center flex:items-center"
+        component="span"
+        transitionAppear={true}
+        transitionAppearTimeout={400}
+        transitionEnter={false}
+        transitionLeave={true}
+        transitionLeaveTimeout={350}
+        transitionName="transition:dialog-fadeIn">
+        <span
+          className="pos:absolute-0 display:flex flex:content-center flex:items-center">
+          <ReactCSSTransitionGroupChild
+            appear={true}
+            appearTimeout={400}
+            enter={false}
+            leave={true}
+            leaveTimeout={350}
+            name="transition:dialog-fadeIn">
+            <div>
+              <styled.div
+                className="color:white"
+                type="fixed">
+                <div
+                  className="color:white iaIiqM"
+                  type="fixed">
+                  <PlaceholderDialogContent
+                    onDismiss={[Function]}
+                    onSubmit={[Function]}
+                    size="short">
+                    <div>
+                      <Button
+                        btn="raised action"
+                        onClick={[Function]}>
+                        <button
+                          data-btn="raised action"
+                          onClick={[Function]}>
+                          Done
+                        </button>
+                      </Button>
+                      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Possimus quod voluptate sunt, debitis facere neque rerum sapiente. Maiores dolor saepe cupiditate officia! Quas enim recusandae corrupti perferendis alias nemo eaque explicabo minus earum veniam amet minima dolore commodi ducimus, doloremque excepturi, sapiente porro possimus iusto, ipsa, repudiandae eos? Esse, saepe.
+                    </div>
+                  </PlaceholderDialogContent>
+                </div>
+              </styled.div>
+              <div
+                className="pos:absolute-0"
+                onClick={[Function]} />
+            </div>
+          </ReactCSSTransitionGroupChild>
+        </span>
+      </ReactTransitionGroup>
+    </ReactCSSTransitionGroup>
+    <Backdrop
+      isOpen={true}
+      onClick={[Function]}>
+      <ReactCSSTransitionGroup
+        transitionAppear={true}
+        transitionAppearTimeout={700}
+        transitionEnter={false}
+        transitionLeave={true}
+        transitionLeaveTimeout={400}
+        transitionName="transition:overlay-fadeIn">
+        <ReactTransitionGroup
+          childFactory={[Function]}
+          component="span"
+          transitionAppear={true}
+          transitionAppearTimeout={700}
+          transitionEnter={false}
+          transitionLeave={true}
+          transitionLeaveTimeout={400}
+          transitionName="transition:overlay-fadeIn">
+          <span>
+            <ReactCSSTransitionGroupChild
+              appear={true}
+              appearTimeout={700}
+              enter={false}
+              leave={true}
+              leaveTimeout={400}
+              name="transition:overlay-fadeIn">
+              <styled.div
+                onClick={[Function]}
+                onTouchMove={[Function]}>
+                <div
+                  className="kQeSPN"
+                  onClick={[Function]}
+                  onTouchMove={[Function]} />
+              </styled.div>
+            </ReactCSSTransitionGroupChild>
+          </span>
+        </ReactTransitionGroup>
+      </ReactCSSTransitionGroup>
+    </Backdrop>
+  </div>
+</Dialog>
+`;

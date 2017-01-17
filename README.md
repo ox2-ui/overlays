@@ -21,6 +21,11 @@ yarn add @ox2/overlays
 ```
 
 ## Usage
+In your app root import transition styles:
+```js
+import '@ox2/overlays/transitions.css';
+```
+
 ```js
 import Dialog from '@ox2/overlays/Dialog';
 

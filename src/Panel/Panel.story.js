@@ -1,7 +1,6 @@
 import React from 'react';
 import { storiesOf } from '@kadira/storybook';
 import Panel from './Panel';
-import Scroller from '@ox2/scroller/Scroller';
 import PlaceholderDialogContent from '../../data/PlaceholderDialogContent';
 
 storiesOf('Panel', module)
@@ -15,28 +14,8 @@ storiesOf('Panel', module)
       right={'auto'}
       className={'color:white'}
     >
-      <Scroller className="padding-b:40">
-        <PlaceholderDialogContent size="long" />
-      </Scroller>
+      <PlaceholderDialogContent hasScroller={true} size="long" />
     </Panel>
-  ))
-  .add('left panel2 ', () => (
-    <div>
-      <button className="pos:absolute-0" style={{zIndex: 9}}>some</button>
-      <Panel
-        zDepth={10}
-        isOpen={true}
-        maxWidth={'320px'}
-        width={'93%'}
-        transition={'slideFromLeft'}
-        right={'auto'}
-        className={'color:white'}
-      >
-        <Scroller className="padding-b:40">
-          <PlaceholderDialogContent size="long" />
-        </Scroller>
-      </Panel>
-    </div>
   ))
   .add('right panel', () => (
     <Panel
@@ -48,9 +27,7 @@ storiesOf('Panel', module)
       left={'auto'}
       className={'color:white'}
     >
-      <Scroller className="padding-b:40">
-        <PlaceholderDialogContent size="long" />
-      </Scroller>
+      <PlaceholderDialogContent hasScroller={true} size="long" />
     </Panel>
   ))
   .add('right panel • modal', () => (
@@ -64,9 +41,7 @@ storiesOf('Panel', module)
       left={'auto'}
       className={'color:white'}
     >
-      <Scroller className="padding-b:40">
-        <PlaceholderDialogContent size="long" />
-      </Scroller>
+      <PlaceholderDialogContent hasScroller={true} size="long" />
     </Panel>
   ))
   .add('fullscreen', () => (
@@ -77,9 +52,7 @@ storiesOf('Panel', module)
       transition={'zoomIn'}
       className={'color:white'}
     >
-      <Scroller className="padding-b:40">
-        <PlaceholderDialogContent size="long" />
-      </Scroller>
+      <PlaceholderDialogContent hasScroller={true} size="long" />
     </Panel>
   ))
   .add('fullscreen • slideFromBottom', () => (
@@ -90,9 +63,7 @@ storiesOf('Panel', module)
       transition={'slideFromBottom'}
       className={'color:white'}
     >
-      <Scroller className="padding-b:40">
-        <PlaceholderDialogContent size="long" />
-      </Scroller>
+      <PlaceholderDialogContent hasScroller={true} size="long" />
     </Panel>
   ))
   .add('maxWidth centered • slideFromBottom', () => (
@@ -104,9 +75,7 @@ storiesOf('Panel', module)
       transition={'slideFromBottom'}
       className={'color:white'}
     >
-      <Scroller className="padding-b:40">
-        <PlaceholderDialogContent size="long" />
-      </Scroller>
+      <PlaceholderDialogContent hasScroller={true} size="long" />
     </Panel>
   ))
   .add('bottom left', () => (
@@ -121,9 +90,7 @@ storiesOf('Panel', module)
       top={'auto'}
       className={'color:white'}
     >
-      <Scroller className="padding-b:40">
-        <PlaceholderDialogContent size="long" />
-      </Scroller>
+      <PlaceholderDialogContent hasScroller={true} size="long" />
     </Panel>
   ))
   .add('right panel • top spacing', () => (
@@ -137,8 +104,6 @@ storiesOf('Panel', module)
       top={'20px'}
       className={'color:white'}
     >
-      <Scroller className="padding-b:40">
-        <PlaceholderDialogContent size="long" />
-      </Scroller>
+      <PlaceholderDialogContent hasScroller={true} size="long" />
     </Panel>
   ));

@@ -1,5 +1,6 @@
 import React, { PropTypes } from 'react';
 import Button from '@ox2/button/Button';
+import Scroller from '@ox2/scroller/Scroller';
 
 const shortContent = 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Possimus quod voluptate sunt, debitis facere neque rerum sapiente. Maiores dolor saepe cupiditate officia! Quas enim recusandae corrupti perferendis alias nemo eaque explicabo minus earum veniam amet minima dolore commodi ducimus, doloremque excepturi, sapiente porro possimus iusto, ipsa, repudiandae eos? Esse, saepe.';
 
@@ -11,20 +12,41 @@ const xlongContent = 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. 
  * PlaceholderDialogContent Component
  */
 const PlaceholderDialogContent = (props) => {
-  const { className, onDismiss, size} = props;
+  const { className, onDismiss, size, hasScroller} = props;
 
   return (
     <div className={className}>
-      <Button onClick={() => onDismiss()} btn="raised action">Done</Button>
       {do {
-        if (size === 'short') {
-          shortContent;
-        } else if (size === 'long') {
-          longContent;
-        } else if (size === 'xlong') {
-          xlongContent;
+        if (hasScroller) {
+          <Scroller>
+            <Button onClick={() => onDismiss()} btn="raised action">Done</Button>
+            {do {
+              if (size === 'short') {
+                shortContent;
+              } else if (size === 'long') {
+                longContent;
+              } else if (size === 'xlong') {
+                xlongContent;
+              }
+            }}
+          </Scroller>;
+        } else {
+          <div>
+            <Button onClick={() => onDismiss()} btn="raised action">Done</Button>
+            {do {
+              if (size === 'short') {
+                shortContent;
+              } else if (size === 'long') {
+                longContent;
+              } else if (size === 'xlong') {
+                xlongContent;
+              }
+            }}
+          </div>;
         }
       }}
+
+
     </div>
   );
 };
@@ -34,6 +56,9 @@ PlaceholderDialogContent.propTypes = {
    * The css class name of the root element.
    */
   className: PropTypes.string,
+  hasScroller: PropTypes.bool,
+  onDismiss: PropTypes.func,
+  size: PropTypes.string.isRequired,
 };
 
 export default PlaceholderDialogContent;

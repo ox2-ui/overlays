@@ -1,6 +1,6 @@
 {
   "name": "@ox2/overlays",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Overlay panels and dialogs.",
   "repository": {
     "type": "git",

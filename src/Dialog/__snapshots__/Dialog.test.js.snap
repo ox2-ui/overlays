@@ -51,16 +51,18 @@ exports[`test renders correctly 1`] = `
                     onSubmit={[Function]}
                     size="short">
                     <div>
-                      <Button
-                        btn="raised action"
-                        onClick={[Function]}>
-                        <button
-                          data-btn="raised action"
+                      <div>
+                        <Button
+                          btn="raised action"
                           onClick={[Function]}>
-                          Done
-                        </button>
-                      </Button>
-                      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Possimus quod voluptate sunt, debitis facere neque rerum sapiente. Maiores dolor saepe cupiditate officia! Quas enim recusandae corrupti perferendis alias nemo eaque explicabo minus earum veniam amet minima dolore commodi ducimus, doloremque excepturi, sapiente porro possimus iusto, ipsa, repudiandae eos? Esse, saepe.
+                          <button
+                            data-btn="raised action"
+                            onClick={[Function]}>
+                            Done
+                          </button>
+                        </Button>
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Possimus quod voluptate sunt, debitis facere neque rerum sapiente. Maiores dolor saepe cupiditate officia! Quas enim recusandae corrupti perferendis alias nemo eaque explicabo minus earum veniam amet minima dolore commodi ducimus, doloremque excepturi, sapiente porro possimus iusto, ipsa, repudiandae eos? Esse, saepe.
+                      </div>
                     </div>
                   </PlaceholderDialogContent>
                 </div>

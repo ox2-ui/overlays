@@ -97,43 +97,19 @@ class Panel extends Component {
     zDepth: PropTypes.number,
   };
 
-  state = {
-    isOpen: this.props.isOpen || false,
-  };
-
-  componentWillReceiveProps= (nextProps) => {
-    if (nextProps.isOpen !== this.state.isOpen) {
-      this.setState({ isOpen: nextProps.isOpen });
-    }
-  }
-
-  handleSubmit = (value) => {
-    if (this.props.onSubmit) {
-      this.props.onSubmit({ value });
-    }
-    this.setState({isOpen: false});
-  };
-
-  handleDissmis = () => {
-    if (this.props.onDismiss) {
-      this.props.onDismiss();
-    }
-    this.setState({isOpen: false});
-  };
-
   render() {
-    const { className, children, centered, hideShadow, zDepth, hideBackdrop, transition, isModal, maxWidth, width, height, top, left, right, bottom } = this.props;
+    const { className, children, centered, hideShadow, zDepth, hideBackdrop, transition, isModal, maxWidth, width, height, top, left, right, bottom, isOpen, onDismiss, onSubmit } = this.props;
 
     return (
       <div>
-        <ReactCSSTransitionGroup
-          transitionName={`transition:dialog-${transition}`}
-          transitionAppear={true}
-          transitionEnter={false}
-          transitionAppearTimeout={400}
-          transitionLeaveTimeout={350}
-        >
-          {this.state.isOpen &&
+        {isOpen &&
+          <ReactCSSTransitionGroup
+            transitionName={`transition:dialog-${transition}`}
+            transitionAppear={true}
+            transitionEnter={false}
+            transitionAppearTimeout={400}
+            transitionLeaveTimeout={350}
+          >
             <PanelContent
               key={1}
               className={className}
@@ -144,15 +120,15 @@ class Panel extends Component {
               centered={centered}
               style={{zIndex: zDepth, top: top, left: left, bottom: bottom, right: right}}
             >
-              { React.cloneElement(children, { onDismiss: this.handleDissmis, onSubmit: this.handleSubmit }) }
+              { React.cloneElement(children, { onDismiss, onSubmit }) }
             </PanelContent>
-          }
-        </ReactCSSTransitionGroup>
+          </ReactCSSTransitionGroup>
+        }
         { !hideBackdrop &&
           <Backdrop
             zDepth={zDepth - 1}
-            isOpen={this.state.isOpen}
-            onClick={isModal ? null : this.handleDissmis}
+            isOpen={isOpen}
+            onClick={isModal ? null : onDismiss}
           />
         }
       </div>

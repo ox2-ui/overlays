@@ -3,7 +3,7 @@ import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
 import styled from 'styled-components';
 
 const Base = styled.div`
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
   right: 0;
@@ -11,14 +11,14 @@ const Base = styled.div`
   -webkit-backdrop-filter: blur(7px);
   background-color: rgba(94, 90, 89, 0.6);
   animation-duration: 1s;
-  z-index: -1;
+  // z-index: -1;
 `;
 
 /**
  * Backdrop Component
  */
 const Backdrop = (props) => {
-  const { isOpen, onClick } = props;
+  const { isOpen, onClick, zDepth } = props;
 
   return (
     <ReactCSSTransitionGroup
@@ -33,6 +33,7 @@ const Backdrop = (props) => {
           key={1}
           onTouchMove={event => event.preventDefault()}
           onClick={onClick}
+          style={{zIndex: zDepth}}
         />
       }
     </ReactCSSTransitionGroup>
@@ -48,6 +49,10 @@ Backdrop.propTypes = {
    * Callback function that is fired when the overlay clicked.
    */
   onClick: PropTypes.func,
+  /**
+   * This number represents the zDepth of the backdrop.
+   */
+  zDepth: PropTypes.number,
 };
 
 export default Backdrop;

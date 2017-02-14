@@ -4,7 +4,7 @@ import Backdrop from '../Backdrop';
 import styled from 'styled-components';
 
 const PanelContent = styled.div`
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
   right: 0;
@@ -125,7 +125,7 @@ class Panel extends Component {
     const { className, children, centered, hideShadow, zDepth, hideBackdrop, transition, isModal, maxWidth, width, height, top, left, right, bottom } = this.props;
 
     return (
-      <div className="pos:absolute-0" style={{zIndex: zDepth}}>
+      <div>
         <ReactCSSTransitionGroup
           transitionName={`transition:dialog-${transition}`}
           transitionAppear={true}
@@ -142,7 +142,7 @@ class Panel extends Component {
               width={width}
               height={height}
               centered={centered}
-              style={{top: top, left: left, bottom: bottom, right: right}}
+              style={{zIndex: zDepth, top: top, left: left, bottom: bottom, right: right}}
             >
               { React.cloneElement(children, { onDismiss: this.handleDissmis, onSubmit: this.handleSubmit }) }
             </PanelContent>
@@ -150,6 +150,7 @@ class Panel extends Component {
         </ReactCSSTransitionGroup>
         { !hideBackdrop &&
           <Backdrop
+            zDepth={zDepth - 1}
             isOpen={this.state.isOpen}
             onClick={isModal ? null : this.handleDissmis}
           />

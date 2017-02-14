@@ -3,10 +3,7 @@
     initialState = { isOpen: false };
     const handleOpen = () => setState({ isOpen: true });
     const handleDismiss = () => {
-      window.setTimeout(() => {
-        setState({isOpen: false});
-      }
-      , 350);
+      setState({isOpen: false});
     };
 
     const MyContent = (props) => {
@@ -22,19 +19,16 @@
     <div>
       <button onClick={() => handleOpen()}>Open</button>
 
-
-      {state.isOpen &&
-        <Panel
-          zDepth={10}
-          isOpen={state.isOpen}
-          maxWidth={'320px'}
-          transition={'slideFromLeft'}
-          right={'auto'}
-          onDismiss={handleDismiss}
-        >
-          <MyContent />
-        </Panel>
-      }
+      <Panel
+        zDepth={10}
+        isOpen={state.isOpen}
+        maxWidth={'320px'}
+        transition={'slideFromLeft'}
+        right={'auto'}
+        onDismiss={handleDismiss}
+      >
+        <MyContent />
+      </Panel>
 
     </div>
 
